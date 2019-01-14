@@ -8,9 +8,9 @@ namespace Snake
 {
     class Point
     {
-        private int x;
-        private int y;
-        private char sym;
+        public int x;
+        public int y;
+        public char sym;
 
         public Point(int _x, int _y, char _sym)
         {
@@ -54,6 +54,10 @@ namespace Snake
         {
             sym = ' ';
             Draw();
+        }
+        public bool isHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
         }
     }
 }

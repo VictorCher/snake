@@ -38,6 +38,19 @@ namespace Snake
             nextPoint.Move(1, direct);
             return nextPoint;
         }
+
+        internal bool eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.isHit(food))
+            {
+                food.sym = head.sym;
+                pList.Add(food);
+                return true;
+            }
+            else return false;
+        }
+
         public void HandleKey(ConsoleKey key)
         {
             if (key == ConsoleKey.RightArrow) direct = Direction.RIGHT;
